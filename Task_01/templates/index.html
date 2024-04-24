@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    
+</head>
+<style>
+    *{
+        background: linear-gradient(135deg, #f6f8fa, #d1e5f0);
+    }
+    body{
+        display:flex;
+        justify-content:center;
+    }
+    .form-container {
+        max-width: 400px;
+        margin: 0 auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: #f9f9f9;
+    }
+    .form-container label {
+        font-weight: bold;
+    }
+    
+    .form-container input[type="text"],
+    .form-container select {
+        width: 100%;
+        padding: 8px;
+        margin: 5px 0;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+    }
+    
+    .form-container button {
+        width: 100%;
+        padding: 10px;
+        margin-top: 10px;
+        border: none;
+        border-radius: 3px;
+        background-color: #007bff;
+        color: #fff;
+        cursor: pointer;
+        display:block;
+    }
+    
+    .form-container button:hover {
+        background-color: #0056b3;
+    }
+    
+    .form-container input[type="text"][name="output"] {
+        margin-top: 10px;
+        border: 1px solid #007bff;
+        border-radius: 3px;
+    }
+    button{
+        background:blue;
+        color:white;
+        font-size:15px;
+        margin-top:2rem;
+        margin-bottom:1rem;
+        border-radius:5px;
+        display:block;
+        margin: 0 auto;
+        
+    }
+    .num1{
+        border:2px solid black;
+        padding:2rem;
+        border-radius:2rem;
+    }
+    h2{
+        align-items:center;
+        display:flex;
+        justify-content:center;
+    }
+    input{
+        border-radius:1.5rem;
+        padding:10px;
+    }
+    label{
+        justify-content:center;
+        align-items:center;
+        display:flex;
+        text-align:center;
+    }
+    #opr{
+        justify-content:center;
+        align-items:center;
+        display:flex;
+    }
+    option{
+        font-size:15px;
+    }
+    #opr {
+        width: 100%;
+        padding: 8px;
+        margin: 5px 0;
+        border: 1px solid #ccc;
+        border-radius: 2rem;
+        text-align: center; 
+    }
+    #opr option {
+        text-align: center; 
+    }
+
+    @media (max-width: 600px) {
+        .form-container {
+            max-width: 100%;
+        }
+    }
+</style>
+<body>
+     <form method="post">
+        {% csrf_token %}
+        <div class="num1">
+            <h2>Calculator</h2>
+        <label><b> Num1<b></label><br>
+        <input type="text" name="num1" placeholder="Enter value"/>
+        <br><br>
+        <label>Select operation</label><br>
+        <select name="opr" id="opr">
+            <option value="+"><b>+</b></option>
+            <option value="-"><b>-</b></option>
+            <option value="*"><b>*</b></option>
+            <option value="/"><b>/</b></option>
+        </select><br>
+        <label> Num2</label><br>
+        <input type="text" name="num2" placeholder="Enter value" /><br><br>
+        <button>calculate</button><br>
+        <label>Output</label><br>
+        <input type="text" value="{{c}}" name="output"/>
+    </div>
+    </form>    
+    
+</body>
+</html>
