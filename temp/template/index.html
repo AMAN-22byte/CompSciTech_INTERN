@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+</head>
+<style>
+    /* Your existing CSS styles */
+</style>
+<body>
+    <div class="num1">
+        <h2>Calculator</h2>
+        <!-- Input fields for calculation data -->
+        <input type="text" id="num1" placeholder="Enter value"/><br><br>
+        <input type="text" id="num2" placeholder="Enter value" /><br><br>
+        <select id="opr">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+        </select><br><br>
+        <!-- Button to trigger calculation request generation -->
+        <button onclick="calculate()">Calculate</button><br>
+        <!-- Output field for displaying calculation result -->
+        <input type="text" id="output"/>
+    </div>
+
+    <script>
+        function calculate() {
+            // Retrieve calculation data from input fields
+            var num1 = document.getElementById("num1").value;
+            var num2 = document.getElementById("num2").value;
+            var opr = document.getElementById("opr").value;
+
+            // Construct data object
+            var data = {
+                'num1': num1,
+                'num2': num2,
+                'opr': opr
+            };
+
+            // Send calculation data to producer service via AJAX
+            fetch('/generate-calculation-request/', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRFToken': getCookie('csrftoken')
+                },
+                body: JSON.stringify(data)
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Display calculation result in output field
+                document.getElementById("output").value = data.result;
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        }
+
+        // Function to get CSRF token from cookie
+        function getCookie(name) {
+            var cookieValue = null;
+            if (document.cookie && document.cookie !== '') {
+                var cookies = document.cookie.split(';');
+                for (var i = 0; i < cookies.length; i++) {
+                    var cookie = cookies[i].trim();
+                    if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                        cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                        break;
+                    }
+                }
+            }
+            return cookieValue;
+        }
+    </script>
+</body>
+</html>

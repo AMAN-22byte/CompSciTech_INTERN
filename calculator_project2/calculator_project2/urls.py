@@ -1,5 +1,5 @@
 """
-URL configuration for scheduler project.
+URL configuration for calculator_project2 project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/5.0/topics/http/urls/
@@ -15,10 +15,15 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.contrib import views
-from django.urls import path
+import producer
+from django.urls import path,include
+import debug_toolbar
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('schedule/', views.schedule_tasks, name='schedule_tasks'),
+    path('producer/',include('producer.urls')),
+    path('consumer/', include('consumer.urls')),
+    path('scheduler/', include('scheduler.urls')),
+    path('', include('calculator.urls')),
+    path('__debug__/',include(debug_toolbar.urls)),
 ]
