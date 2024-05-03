@@ -34,6 +34,7 @@ def send_message(request):
 
         # Close connection
         connection.close()
+        
 
         return HttpResponse("Message sent to RabbitMQ queue")
     else:

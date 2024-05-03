@@ -27,6 +27,7 @@ def receive_message(request):
 
     # Close connection
     connection.close()
+    
 
     if method_frame:
         return HttpResponse(f"Received message from RabbitMQ queue: {body.decode()}")

@@ -4,6 +4,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 
 def calculate(request):
+    
     if request.method == 'POST':
         operand1 = float(request.POST.get('operand1'))
         operand2 = float(request.POST.get('operand2'))
