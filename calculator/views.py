@@ -24,4 +24,5 @@ def calculate(request):
 
         return HttpResponse(f"Result: {result}")
     else:
-        return HttpResponse("Calculator Form")
+        # return HttpResponse("Calculator Form")
+        return render(request,'index.html')
