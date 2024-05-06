@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        background: #AFD286;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        flex-direction:column;
+    }
+
+    h2 {
+        text-align: center;
+        font-size: 2rem;
+        padding:2rem;
+    }
+
+    form {
+        border: 2px solid black;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    input[type="number"],
+    select {
+        margin: 5px 0;
+        padding: 8px;
+        width: 200px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+
+    button {
+        margin-top: 10px;
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+        background-color: #0056b3;
+    }
+</style>
+<body>
+    <h2>Calculator</h2>
+    <form method="POST" action="{% url 'calculate' %}" id="calculation-form">
+        {% csrf_token %}
+        Operand 1: <input type="number" name="operand1" required><br>
+        Operand 2: <input type="number" name="operand2" required><br>
+        Operator: 
+        <select name="operator">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+        </select><br>
+        <button type="submit" id="calculate-button">Calculate</button>
+    </form>
+    <div id="result"></div>
+
+    <script>
+    $(document).ready(function() {
+        $("#calculate-button").click(function() {
+            $.post("{% url 'calculate' %}", $("#calculation-form").serialize(), function(data) {
+                // Show a message indicating that the calculation request was sent
+                $("#result").text("Calculation request sent. Waiting for result...");
+                
+                // Start polling for the result
+                pollForResult();
+            });
+        });
+
+        function pollForResult() {
+            setTimeout(function() {
+                $.get("{% url 'get_result' %}", function(data) {
+                    if (data.result) {
+                        $("#result").text("Result: " + data.result);
+                    } else {
+                        pollForResult();
+                    }
+                });
+            }, 2000);
+        }
+    });
+    </script>
+</body>
+</html>
