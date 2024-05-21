@@ -3,8 +3,7 @@ from django.shortcuts import render
 # Create your views here.
 from django.http import HttpResponse,JsonResponse
 from .producer import send_message
-from .producer import send_message
-from .consumer import calculation_result 
+from .management.commands.consumer import calculation_result 
 
 def calculate(request):
     if request.method == 'POST':

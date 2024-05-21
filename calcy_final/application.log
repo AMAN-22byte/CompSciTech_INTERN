@@ -1,0 +1,10 @@
+2024-05-22 00:42:14,278 - calculator.producer - INFO - Sent '+,2,3'
+2024-05-22 00:42:54,570 - calculator.management.commands.consumer - INFO - Waiting for messages. To exit press CTRL+C
+2024-05-22 00:42:54,571 - calculator.management.commands.consumer - INFO - Received b'+,2,3'
+2024-05-22 00:42:54,571 - calculator.management.commands.consumer - INFO - Result: 5.0
+2024-05-22 00:45:14,540 - calculator.producer - INFO - Sent '*,20,30'
+2024-05-22 00:45:14,541 - calculator.management.commands.consumer - INFO - Received b'*,20,30'
+2024-05-22 00:45:14,541 - calculator.management.commands.consumer - INFO - Result: 600.0
+2024-05-22 00:46:55,946 - calculator.producer - INFO - Sent '*,50,10000000'
+2024-05-22 00:46:55,946 - calculator.management.commands.consumer - INFO - Received b'*,50,10000000'
+2024-05-22 00:46:55,947 - calculator.management.commands.consumer - INFO - Result: 500000000.0

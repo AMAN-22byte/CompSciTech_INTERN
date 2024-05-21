@@ -1,18 +1,22 @@
 import pika,logging
 from django.conf import settings
 
-# logging.basicConfig(
-#     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
-#     level=logging.INFO
-# )
 
-# logger = logging.getLogger(__name__)
+# Create a logger
+logger = logging.getLogger(__name__)
+logger.setLevel(logging.INFO)
+logger.setLevel(logging.DEBUG)
 
-# logger.debug('Debug message')
-# logger.info('Info message')
-# logger.warning('Warning message')
-# logger.error('Error message')
-# logger.critical('Critical message')
+# Create a file handler
+handler = logging.FileHandler('application.log')
+handler.setLevel(logging.INFO)
+handler.setLevel(logging.DEBUG)
+
+formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+handler.setFormatter(formatter)
+
+# Add the handlers to the logger
+logger.addHandler(handler)
 
 def send_message(message):
     
@@ -28,7 +32,7 @@ def send_message(message):
 
         channel.basic_publish(exchange='', routing_key='operands', body=message)
         print(" [x] Sent %r" % message)
-        # logger.info("Sent message: %r", message)
+        logger.info("Sent %r", message)
 
         connection.close()
    

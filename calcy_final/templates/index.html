@@ -100,6 +100,11 @@
             }, 2000);
         }
     });
+    document.getElementById("calculatorForm").addEventListener("submit", function() {
+        setTimeout(function() {
+            location.reload();
+        }, 1000); // Refresh page after 1 second (adjust as needed)
+    });
     </script>
 </body>
 </html>

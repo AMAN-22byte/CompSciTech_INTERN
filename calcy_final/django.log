@@ -1,0 +1,44 @@
+2024-05-22 00:41:18,390 - django.utils.autoreload - INFO - Watching for file changes with StatReloader
+2024-05-22 00:41:56,440 - django.utils.autoreload - INFO - Watching for file changes with StatReloader
+2024-05-22 00:42:14,262 - pika.adapters.utils.connection_workflow - INFO - Pika version 1.3.2 connecting to ('::1', 5672, 0, 0)
+2024-05-22 00:42:14,264 - pika.adapters.utils.io_services_utils - INFO - Socket connected: <socket.socket fd=1340, family=23, type=1, proto=6, laddr=('::1', 60928, 0, 0), raddr=('::1', 5672, 0, 0)>
+2024-05-22 00:42:14,265 - pika.adapters.utils.connection_workflow - INFO - Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000001F399B20650>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000001F399B20650> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>).
+2024-05-22 00:42:14,273 - pika.adapters.utils.connection_workflow - INFO - AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000001F399B20650> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>
+2024-05-22 00:42:14,274 - pika.adapters.utils.connection_workflow - INFO - AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000001F399B20650> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>
+2024-05-22 00:42:14,274 - pika.adapters.blocking_connection - INFO - Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000001F399B20650> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>
+2024-05-22 00:42:14,274 - pika.adapters.blocking_connection - INFO - Created channel=1
+2024-05-22 00:42:14,278 - calculator.producer - INFO - Sent '+,2,3'
+2024-05-22 00:42:14,279 - pika.adapters.blocking_connection - INFO - Closing connection (200): Normal shutdown
+2024-05-22 00:42:14,279 - pika.channel - INFO - Closing channel (200): 'Normal shutdown' on <Channel number=1 OPEN conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000001F399B20650> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>
+2024-05-22 00:42:14,281 - pika.channel - INFO - Received <Channel.CloseOk> on <Channel number=1 CLOSING conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000001F399B20650> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>
+2024-05-22 00:42:14,281 - pika.connection - INFO - Closing connection (200): 'Normal shutdown'
+2024-05-22 00:42:14,282 - pika.adapters.utils.io_services_utils - INFO - Aborting transport connection: state=1; <socket.socket fd=1340, family=23, type=1, proto=6, laddr=('::1', 60928, 0, 0), raddr=('::1', 5672, 0, 0)>
+2024-05-22 00:42:14,282 - pika.adapters.utils.io_services_utils - INFO - _AsyncTransportBase._initate_abort(): Initiating abrupt asynchronous transport shutdown: state=1; error=None; <socket.socket fd=1340, family=23, type=1, proto=6, laddr=('::1', 60928, 0, 0), raddr=('::1', 5672, 0, 0)>
+2024-05-22 00:42:14,282 - pika.adapters.utils.io_services_utils - INFO - Deactivating transport: state=1; <socket.socket fd=1340, family=23, type=1, proto=6, laddr=('::1', 60928, 0, 0), raddr=('::1', 5672, 0, 0)>
+2024-05-22 00:42:14,282 - pika.connection - INFO - AMQP stack terminated, failed to connect, or aborted: opened=True, error-arg=None; pending-error=ConnectionClosedByClient: (200) 'Normal shutdown'
+2024-05-22 00:42:14,282 - pika.connection - INFO - Stack terminated due to ConnectionClosedByClient: (200) 'Normal shutdown'
+2024-05-22 00:42:14,283 - pika.adapters.utils.io_services_utils - INFO - Closing transport socket and unlinking: state=3; <socket.socket fd=1340, family=23, type=1, proto=6, laddr=('::1', 60928, 0, 0), raddr=('::1', 5672, 0, 0)>
+2024-05-22 00:42:14,283 - pika.adapters.blocking_connection - INFO - User-initiated close: result=BlockingConnection__OnClosedArgs(connection=<SelectConnection CLOSED transport=None params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>, error=ConnectionClosedByClient: (200) 'Normal shutdown')
+2024-05-22 00:42:54,557 - pika.adapters.utils.connection_workflow - INFO - Pika version 1.3.2 connecting to ('::1', 5672, 0, 0)
+2024-05-22 00:42:54,558 - pika.adapters.utils.io_services_utils - INFO - Socket connected: <socket.socket fd=1272, family=23, type=1, proto=6, laddr=('::1', 60954, 0, 0), raddr=('::1', 5672, 0, 0)>
+2024-05-22 00:42:54,559 - pika.adapters.utils.connection_workflow - INFO - Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000001AED334D3D0>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000001AED334D3D0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>).
+2024-05-22 00:42:54,565 - pika.adapters.utils.connection_workflow - INFO - AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000001AED334D3D0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>
+2024-05-22 00:42:54,566 - pika.adapters.utils.connection_workflow - INFO - AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000001AED334D3D0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>
+2024-05-22 00:42:54,566 - pika.adapters.blocking_connection - INFO - Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000001AED334D3D0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>
+2024-05-22 00:42:54,566 - pika.adapters.blocking_connection - INFO - Created channel=1
+2024-05-22 00:42:54,570 - calculator.management.commands.consumer - INFO - Waiting for messages. To exit press CTRL+C
+2024-05-22 00:42:54,571 - calculator.management.commands.consumer - INFO - Received b'+,2,3'
+2024-05-22 00:42:54,571 - calculator.management.commands.consumer - INFO - Result: 5.0
+2024-05-22 00:44:06,946 - django.utils.autoreload - INFO - C:\Users\getto\OneDrive\Desktop\CompSci Tech_INTERN\CompSciTech_INTERN-2\calcy_final\calculator\producer.py changed, reloading.
+2024-05-22 00:44:08,396 - django.utils.autoreload - INFO - Watching for file changes with StatReloader
+2024-05-22 00:44:27,132 - django.utils.autoreload - INFO - C:\Users\getto\OneDrive\Desktop\CompSci Tech_INTERN\CompSciTech_INTERN-2\calcy_final\calculator\producer.py changed, reloading.
+2024-05-22 00:44:28,725 - django.utils.autoreload - INFO - Watching for file changes with StatReloader
+2024-05-22 00:44:31,346 - django.utils.autoreload - INFO - C:\Users\getto\OneDrive\Desktop\CompSci Tech_INTERN\CompSciTech_INTERN-2\calcy_final\calculator\producer.py changed, reloading.
+2024-05-22 00:44:32,986 - django.utils.autoreload - INFO - Watching for file changes with StatReloader
+2024-05-22 00:44:36,529 - django.utils.autoreload - INFO - C:\Users\getto\OneDrive\Desktop\CompSci Tech_INTERN\CompSciTech_INTERN-2\calcy_final\calculator\producer.py changed, reloading.
+2024-05-22 00:44:37,831 - django.utils.autoreload - INFO - Watching for file changes with StatReloader
+2024-05-22 00:44:52,358 - django.utils.autoreload - INFO - C:\Users\getto\OneDrive\Desktop\CompSci Tech_INTERN\CompSciTech_INTERN-2\calcy_final\calcy_final\settings.py changed, reloading.
+2024-05-22 00:45:14,541 - calculator.management.commands.consumer - INFO - Received b'*,20,30'
+2024-05-22 00:45:14,541 - calculator.management.commands.consumer - INFO - Result: 600.0
+2024-05-22 00:46:55,946 - calculator.management.commands.consumer - INFO - Received b'*,50,10000000'
+2024-05-22 00:46:55,947 - calculator.management.commands.consumer - INFO - Result: 500000000.0
