@@ -1,0 +1,2 @@
+[console_scripts]
+manage = calcy_final.manage:main
