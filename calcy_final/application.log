@@ -22,3 +22,18 @@
 2024-05-22 23:32:57,060 - calculator.management.commands.consumer - INFO - Waiting for messages. To exit press CTRL+C
 2024-05-22 23:32:57,061 - calculator.management.commands.consumer - INFO - Received b'+,2,5'
 2024-05-22 23:32:57,061 - calculator.management.commands.consumer - INFO - Result: 7.0
+2024-05-30 01:04:28,798 - calculator.producer - INFO - Sent '*,30,2'
+2024-05-30 01:05:06,485 - calculator.management.commands.consumer - INFO - Waiting for messages. To exit press CTRL+C
+2024-05-30 01:05:06,486 - calculator.management.commands.consumer - INFO - Received b'*,30,2'
+2024-05-30 01:05:06,486 - calculator.management.commands.consumer - INFO - Result: 60.0
+2024-05-30 01:05:36,619 - calculator.producer - INFO - Sent '-,15,2'
+2024-05-30 01:05:36,622 - calculator.management.commands.consumer - INFO - Received b'-,15,2'
+2024-05-30 01:05:36,622 - calculator.management.commands.consumer - INFO - Result: 13.0
+2024-05-30 10:40:42,075 - calculator.producer - INFO - Sent '*,15,3'
+2024-05-30 10:41:40,520 - calculator.management.commands.consumer - INFO - Waiting for messages. To exit press CTRL+C
+2024-05-30 10:41:40,521 - calculator.management.commands.consumer - INFO - Received b'*,15,3'
+2024-05-30 10:41:40,522 - calculator.management.commands.consumer - INFO - Result: 45.0
+2024-05-30 23:30:50,431 - calculator.producer - INFO - Sent '-,23,3'
+2024-05-30 23:31:21,445 - calculator.management.commands.consumer - INFO - Waiting for messages. To exit press CTRL+C
+2024-05-30 23:31:21,446 - calculator.management.commands.consumer - INFO - Received b'-,23,3'
+2024-05-30 23:31:21,446 - calculator.management.commands.consumer - INFO - Result: 20.0

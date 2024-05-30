@@ -1,0 +1,8 @@
+Metadata-Version: 2.1
+Name: calcy_final
+Version: 0.1
+Classifier: Programming Language :: Python :: 3
+Classifier: Framework :: Django
+Classifier: Operating System :: OS Independent
+Requires-Dist: Django<4.0,>=3.0
+Requires-Dist: pika>=1.1.0
