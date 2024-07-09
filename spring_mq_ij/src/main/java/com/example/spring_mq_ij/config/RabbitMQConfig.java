@@ -12,31 +12,26 @@ import org.springframework.context.annotation.Configuration;
 public class RabbitMQConfig {
 
     @Value("${rabbitmq.queue.name}")
-    private String queue;
+    private String queueName;
+
     @Value("${rabbitmq.exchange.name}")
-    private String exchange;
+    private String exchangeName;
+
     @Value("${rabbitmq.routingKey.name}")
-    private String routingKey;
-    //spring bean for mq queue
+    private String routingKeyName;
+
     @Bean
-    public Queue queue(){
-        return new Queue(queue);
-    }
-    @Bean
-    //spring bean for mq exchange
-    public TopicExchange exchange(){
-        return new TopicExchange(exchange);
+    public Queue queue() {
+        return new Queue(queueName);
     }
 
-    //bind queue with exchange
     @Bean
-    public Binding binding(){
-        return BindingBuilder.bind(queue())
-                .to(exchange())
-                .with(routingKey);
+    public TopicExchange exchange() {
+        return new TopicExchange(exchangeName);
     }
-    //ALL THESE ARE AUTO CONFIGURED....
-    //connection factory
-    //rabbit template
-    //rabbit admin
+
+    @Bean
+    public Binding binding(Queue queue, TopicExchange exchange) {
+        return BindingBuilder.bind(queue).to(exchange).with(routingKeyName);
+    }
 }
